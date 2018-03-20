@@ -15,6 +15,7 @@
 * Repository
 * Init
 * Add
+* Staging Area
 * Commit
 * Log
 * Reset
@@ -59,6 +60,8 @@
   * Initialisation
   * Assignment
 * Identifier
+* Arrays
+* Objects
 
 ## Other
 
