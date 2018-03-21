@@ -61,6 +61,7 @@
   * Assignment
 * Identifier
 * Arrays
+* Iteration
 * Objects
 
 ## Other
