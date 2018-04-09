@@ -1,4 +1,4 @@
-const glossary = [
+var glossary = [
   {
     term: "Virtual Machine",
     class: 00,
