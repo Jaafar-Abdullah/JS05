@@ -848,5 +848,54 @@ const glossary = [
     definition:
       "A process of representing data in a different form. For example, receiving a JavaScript object and turning that into a string representing some HTML markup",
     tags: []
+  },
+  {
+    term: "Interpolation",
+    class: 07,
+    definition:
+      "The process of inserting a value into a string - it works in a similar function to substitution",
+    tags: []
+  },
+  {
+    term: "Imperative Programming",
+    class: 07,
+    definition:
+      "An approach to programming where you define the 'HOW' - you define every single step",
+    tags: []
+  },
+  {
+    term: "Declarative Programming",
+    class: 07,
+    definition:
+      "An approach to programming where you define the 'WHAT' - you define a pattern",
+    tags: []
+  },
+  {
+    term: "array.forEach",
+    class: 07,
+    definition:
+      "Iterates through every item in an array and runs a callback for each of them (provides the item, the index and the entire array as arguments)",
+    tags: []
+  },
+  {
+    term: "array.filter",
+    class: 07,
+    definition:
+      "Iterates through every item in an array and runs a callback for each of them (provides the item, the index and the entire array as arguments). If the callback returns true, the item will be left in the returned collection, otherwise it will be removed",
+    tags: []
+  },
+  {
+    term: "array.map",
+    class: 07,
+    definition:
+      "Iterates through every item in an array and runs a callback for each of them (provides the item, the index and the entire array as arguments). Whatever is returned will be stored in the current index of the returned array. Essentially this performs a transformation on every item",
+    tags: []
+  },
+  {
+    term: "array.reduce",
+    class: 07,
+    definition:
+      "Iterates through every item in an array and runs a callback for each of them (provides the item, the index and the entire array as arguments). The reduce method tries to reduce the entire collection down to a single value. Often called inject",
+    tags: []
   }
 ];
