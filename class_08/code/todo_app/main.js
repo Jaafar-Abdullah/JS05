@@ -1,6 +1,5 @@
 function TodoApp() {
-  // this = {}
-  this.todos = ["Todo One", "Todo Two"]; // this = { todos: [] }
+  this.todos = ["Todo One", "Todo Two"];
 
   this.addTodo = function(todo) {
     this.todos.push(todo);
