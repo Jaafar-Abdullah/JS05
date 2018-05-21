@@ -1,3 +1,5 @@
+const DotEnv = require("dotenv-webpack");
+
 // Create and export a config object
 //   Entry
 //   Output
@@ -20,6 +22,7 @@ const config = {
       }
     ]
   },
+  plugins: [new DotEnv()],
   devServer: {
     contentBase: "./dist"
   }
