@@ -1,3 +1,5 @@
+let step = 0;
+
 function createRenderer() {
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -102,8 +104,10 @@ function createStats() {
 function createController() {
   const details = {
     lightX: 15,
-    lightY: 15,
-    lightZ: 0
+    lightY: 30,
+    lightZ: 0,
+    bouncingSpeed: 0.02,
+    rotationSpeed: 0.02
   };
   return details;
 }
@@ -113,7 +117,14 @@ function addGUI(controller) {
   gui.add(controller, "lightX", -50, 50);
   gui.add(controller, "lightY", -50, 50);
   gui.add(controller, "lightZ", -50, 50);
+  gui.add(controller, "bouncingSpeed", 0, 1);
+  gui.add(controller, "rotationSpeed", 0, 1);
   return gui;
+}
+
+function addOrbitControls(camera, renderer) {
+  const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
+  return orbitControls;
 }
 
 const renderer = createRenderer();
@@ -128,6 +139,7 @@ const lightHelper = addLightHelper(light);
 const stats = createStats();
 const controller = createController();
 const gui = addGUI(controller);
+addOrbitControls(camera, renderer);
 
 scene.add(axes, cube, floor, sphere, light, lightHelper);
 
@@ -143,12 +155,20 @@ window.addEventListener("resize", onResize);
 function animate() {
   renderer.render(scene, camera);
   stats.update();
+
+  step += controller.bouncingSpeed;
+
   light.position.x = controller.lightX;
   light.position.y = controller.lightY;
   light.position.z = controller.lightZ;
-  cube.rotation.x += 0.02;
-  cube.rotation.y += 0.02;
-  cube.rotation.z += 0.02;
+
+  sphere.position.x = 20 + 10 * Math.cos(step);
+  sphere.position.y = 4 + 10 * Math.abs(Math.sin(step));
+
+  cube.rotation.x += controller.rotationSpeed;
+  cube.rotation.y += controller.rotationSpeed;
+  cube.rotation.z += controller.rotationSpeed;
+
   requestAnimationFrame(animate);
 }
 
