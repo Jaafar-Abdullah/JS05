@@ -1,4 +1,4 @@
-const FAV_NUMBER = 84;
+const FAV_NUMBER = 42;
 
 const add = (x, y) => x + y;
 
